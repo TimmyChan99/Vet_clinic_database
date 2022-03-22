@@ -27,19 +27,22 @@ SELECT * FROM animals WHERE weight_kg BETWEEN 10.4 AND 17.3;
 /*  update the animals table by setting the species column to unspecified inside transaction and roll back */
 BEGIN;
 UPDATE animals SET species = 'unspecified';
-SELECT * FROM animals;
+SELECT species FROM animals;
 ROLLBACK;
+SELECT species FROM animals;
 
 /* Update species */
 BEGIN;
 UPDATE animals SET species = 'digimon' WHERE name LIKE '%mon';
-UPDATE animals SET species = 'pokemon' WHERE species = '';
+UPDATE animals SET species = 'pokemon' WHERE species IS NULL;
+SELECT * FROM animals;
 COMMIT;
 SELECT * FROM animals;
 
 /* Delete all records inside transaction */
 BEGIN;
 DELETE FROM animals;
+SELECT * FROM animals;
 ROLLBACK;
 SELECT * FROM animals;
 
@@ -70,5 +73,5 @@ SELECT AVG(weight_kg) FROM animals;
  SELECT MAX(weight_kg), MIN(weight_kg), species FROM animals GROUP BY species;
  
  /* What is the average number of escape attempts per animal type of those born between 1990 and 2000? */
- SELECT AVG(escape_attempts), species FROM animals WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-01-01' GROUP BY species;
+ SELECT AVG(escape_attempts), species FROM animals WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31' GROUP BY species;
  
