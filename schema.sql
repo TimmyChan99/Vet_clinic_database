@@ -49,7 +49,7 @@ CREATE TABLE vets (
 	id INT NOT NULL GENERATED ALWAYS AS IDENTITY,
 	full_name VARCHAR(400) NOT NULL,
 	age INT,
-	date_of_graduation DATE
+	date_of_graduation DATE,
   PRIMARY KEY (id)
 );
 
