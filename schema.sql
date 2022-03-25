@@ -47,7 +47,7 @@ ALTER TABLE animals ADD CONSTRAINT fk_owner FOREIGN KEY (owner_id) REFERENCES ow
 /* Create vets table */
 CREATE TABLE vets (
 	id INT NOT NULL GENERATED ALWAYS AS IDENTITY,
-	full_name VARCHAR(400) NOT NULL,
+	name VARCHAR(400) NOT NULL,
 	age INT,
 	date_of_graduation DATE,
   PRIMARY KEY (id)
