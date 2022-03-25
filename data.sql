@@ -28,7 +28,7 @@ INSERT INTO species(name) VALUES ('Digimon');
 /* Update species_id column */
 BEGIN;
 UPDATE animals SET species_id = (SELECT id FROM species WHERE name = 'Digimon') WHERE name LIKE '%mon';
-UPDATE animals SET species_id = (SELECT id FROM species WHERE name = 'pokemon') WHERE name NOT LIKE '%mon';
+UPDATE animals SET species_id = (SELECT id FROM species WHERE name = 'pokemon') WHERE species_id IS NULL;
 SELECT * FROM animals;
 COMMIT;
 SELECT * FROM animals;
