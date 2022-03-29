@@ -2,6 +2,11 @@
 
 In this project I used a relational database to create the initial data structure for a vet clinic. 
 
+Database Schema: 
+
+![drawSQL-export-2022-03-29_13_48 (1)](https://user-images.githubusercontent.com/92228303/160660225-aabf73f0-a075-461f-ba55-46d65b305853.png)
+
+
 ## Getting Started
 
 This repository includes files with plain SQL that can be used to recreate a database:
